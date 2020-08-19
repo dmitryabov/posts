@@ -1,5 +1,12 @@
+import {usersAPI} from '../api/api';
 
-let initialState = [
+const SET_USERS = 'SET_USERS';
+const TOGGLE_IS_FETCHINT = 'TOGGLE_IS_FETCHINT';
+
+
+let initialState = {
+  isFetching: true,
+  users: [
     {
         "id": 1,
         "name": "Leanne Graham",
@@ -47,10 +54,37 @@ let initialState = [
         }
       },
   ]
+};
   
   
-  const usersReduser = (state = initialState) => {
-      return state
+  const usersReduser = (state = initialState, action) => {
+    switch (action.type) {  
+      case SET_USERS: {
+           return { ...state, users: action.users}
+      }
+      case TOGGLE_IS_FETCHINT: {
+        return { ...state, isFetching: action.isFetching}
+     }
+  
+      default: 
+        return state;
+   }
   }
+
+
+
+export const setUsers = (users) => { return { type: SET_USERS, users}}
+export const setIsToggleFetching = (isFetching) => { return { type: TOGGLE_IS_FETCHINT, isFetching}}
+
+
+export const getUsers = () => { 
+  return (dispatch) => { 
+    dispatch(setIsToggleFetching(true));
+    usersAPI.getUsers().then(data => {
+      dispatch(setIsToggleFetching(false))
+      dispatch(setUsers(data))
+  })
+ }
+}
   
-  export default usersReduser;
+export default usersReduser;

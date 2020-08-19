@@ -1,5 +1,12 @@
+import {messegesAPI} from '../api/api';
 
-let initialState = [
+const SET_MESSAGES = 'SET_MESSAGES';
+const TOGGLE_IS_FETCHINT = 'TOGGLE_IS_FETCHINT';
+
+
+let initialState = {
+  isFetching: true,
+  messages: [
   {
     "userId": 1,
     "id": 1,
@@ -7,34 +14,42 @@ let initialState = [
     "body": "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
   },
   {
-    "userId": 1,
+    "userId": 2,
     "id": 2,
     "title": "qui est esse",
     "body": "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
   },
-  {
-    "userId": 1,
-    "id": 3,
-    "title": "ea molestias quasi exercitationem repellat qui ipsa sit aut",
-    "body": "et iusto sed quo iure\nvoluptatem occaecati omnis eligendi aut ad\nvoluptatem doloribus vel accusantium quis pariatur\nmolestiae porro eius odio et labore et velit aut"
-  },
-  {
-    "userId": 1,
-    "id": 4,
-    "title": "eum et est occaecati",
-    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
-  },
-  {
-    "userId": 1,
-    "id": 5,
-    "title": "nesciunt quas odio",
-    "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
-  },
 ]
-
-
-const messagesReduser = (state = initialState) => {
-    return state
 }
+
+
+const messagesReduser = (state = initialState, action) => { 
+  switch (action.type) {  
+    case SET_MESSAGES: {
+         return { ...state, messages: action.messages}
+    }
+    case TOGGLE_IS_FETCHINT: {
+      return { ...state, isFetching: action.isFetching}
+   }
+    default: 
+      return state;
+ }
+}
+
+
+export const setMessages = (messages) => { return { type: SET_MESSAGES, messages}}
+export const setIsToggleFetching = (isFetching) => { return { type: TOGGLE_IS_FETCHINT, isFetching}}
+
+
+export const getMessages = () => { 
+  return (dispatch) => { 
+    dispatch(setIsToggleFetching(true));
+    messegesAPI.getMessages().then(data => {
+      dispatch(setIsToggleFetching(false))
+      dispatch(setMessages(data))
+  })
+ }
+};
+
 
 export default messagesReduser;

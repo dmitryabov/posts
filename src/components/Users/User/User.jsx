@@ -1,8 +1,12 @@
 import React from 'react';
 import style from './User.module.css';
+import Preloader from '../../common/Preloader/Preloader';
+
 
 const User = (props) => {
     return (
+        <>
+        {props.isFetching ? <Preloader /> : null}
         <div className={style.column}>
               <div className={style.card}>
                 <div className={style.container}>
@@ -18,6 +22,7 @@ const User = (props) => {
                 </div>
               </div>
             </div>
+            </>
     )
 }
 
