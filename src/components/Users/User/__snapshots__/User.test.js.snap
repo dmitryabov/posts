@@ -1,0 +1,173 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render MovieCard 1`] = `
+<div
+  className="column"
+>
+  <div
+    className="card"
+  >
+    <div
+      className="container"
+    >
+      <h2>
+        Leanne Graham
+      </h2>
+      <p>
+        <span
+          className="title"
+        >
+          email:
+        </span>
+         
+        Sincere@april.biz
+      </p>
+      <p>
+        <span
+          className="title"
+        >
+          address:
+        </span>
+      </p>
+      <p>
+        <span
+          className="title details"
+        >
+          street:
+        </span>
+         
+        Kulas Light
+      </p>
+      <p>
+        <span
+          className="title details"
+        >
+          suite:
+        </span>
+         
+        Apt. 556
+      </p>
+      <p>
+        <span
+          className="title details"
+        >
+          city:
+        </span>
+         
+        Gwenborough
+      </p>
+      <p>
+        <span
+          className="title details"
+        >
+          zipcode:
+        </span>
+         
+        92998-3874
+      </p>
+      <p>
+        <span
+          className="title"
+        >
+          phone:
+        </span>
+         
+      </p>
+      <p>
+        <span
+          className="title"
+        >
+          website:
+        </span>
+         
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Render User 1`] = `
+<div
+  className="column"
+>
+  <div
+    className="card"
+  >
+    <div
+      className="container"
+    >
+      <h2>
+        Leanne Graham
+      </h2>
+      <p>
+        <span
+          className="title"
+        >
+          email:
+        </span>
+         
+        Sincere@april.biz
+      </p>
+      <p>
+        <span
+          className="title"
+        >
+          address:
+        </span>
+      </p>
+      <p>
+        <span
+          className="title details"
+        >
+          street:
+        </span>
+         
+        Kulas Light
+      </p>
+      <p>
+        <span
+          className="title details"
+        >
+          suite:
+        </span>
+         
+        Apt. 556
+      </p>
+      <p>
+        <span
+          className="title details"
+        >
+          city:
+        </span>
+         
+        Gwenborough
+      </p>
+      <p>
+        <span
+          className="title details"
+        >
+          zipcode:
+        </span>
+         
+        92998-3874
+      </p>
+      <p>
+        <span
+          className="title"
+        >
+          phone:
+        </span>
+         
+      </p>
+      <p>
+        <span
+          className="title"
+        >
+          website:
+        </span>
+         
+      </p>
+    </div>
+  </div>
+</div>
+`;

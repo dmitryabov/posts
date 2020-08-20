@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Messages 1`] = `
+<div>
+  <div>
+    <img
+      alt="prelouder"
+      src="spinner.svg"
+    />
+  </div>
+  <h2>
+    List of messages
+  </h2>
+  <div
+    className="search_container"
+  >
+    <span>
+      messages filter on title 
+    </span>
+    <input
+      name="search"
+      onChange={[Function]}
+      placeholder="Search.."
+    />
+  </div>
+  <div
+    className="container"
+  >
+    <p>
+      <span>
+        Leanne Graham
+      </span>
+       
+      Bret
+    </p>
+    <p>
+      sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+    </p>
+    <p>
+      <span>
+        quia et suscipit
+suscipit recusandae consequuntur expedita et cum
+reprehenderit molestiae ut ut quas totam
+nostrum rerum est autem sunt rem eveniet architecto
+      </span>
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Render User 1`] = `
+<div>
+  <div>
+    <img
+      alt="prelouder"
+      src="spinner.svg"
+    />
+  </div>
+  <h2>
+    List of messages
+  </h2>
+  <div
+    className="search_container"
+  >
+    <span>
+      messages filter on title 
+    </span>
+    <input
+      name="search"
+      onChange={[Function]}
+      placeholder="Search.."
+    />
+  </div>
+  <div
+    className="container"
+  >
+    <p>
+      <span>
+        Leanne Graham
+      </span>
+       
+      Bret
+    </p>
+    <p>
+      sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+    </p>
+    <p>
+      <span>
+        quia et suscipit
+suscipit recusandae consequuntur expedita et cum
+reprehenderit molestiae ut ut quas totam
+nostrum rerum est autem sunt rem eveniet architecto
+      </span>
+    </p>
+  </div>
+</div>
+`;

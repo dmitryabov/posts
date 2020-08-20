@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Message 1`] = `
+<div>
+  <img
+    alt="prelouder"
+    src="spinner.svg"
+  />
+</div>
+`;

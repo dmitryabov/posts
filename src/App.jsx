@@ -7,6 +7,9 @@ import { Route, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {getMessages} from './redux/messages-reduser';
 import {getUsers} from './redux/users-reduser';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/redux-store';
 
 
 
@@ -44,4 +47,14 @@ const mapDiapatchToProps = (dispatch) => {
 
 const AppContainer = connect(mapStateToProps, mapDiapatchToProps)(App);
 
-export default AppContainer;
+const MainApp = (props) => {
+ return <BrowserRouter>
+    <React.StrictMode>
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    </React.StrictMode>
+  </BrowserRouter>
+}
+
+export default MainApp;

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render Message 1`] = `
+<div
+  className="container"
+>
+  <p>
+    <span>
+      Leanne Graham
+    </span>
+     
+    Bret
+  </p>
+  <p>
+    sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+  </p>
+  <p>
+    <span>
+      quia et suscipit
+suscipit recusandae consequuntur expedita et cum
+reprehenderit molestiae ut ut quas totam
+nostrum rerum est autem sunt rem eveniet architecto
+    </span>
+  </p>
+</div>
+`;
+
+exports[`Render User 1`] = `
+<div
+  className="container"
+>
+  <p>
+    <span>
+      Leanne Graham
+    </span>
+     
+    Bret
+  </p>
+  <p>
+    sunt aut facere repellat provident occaecati excepturi optio reprehenderit
+  </p>
+  <p>
+    <span>
+      quia et suscipit
+suscipit recusandae consequuntur expedita et cum
+reprehenderit molestiae ut ut quas totam
+nostrum rerum est autem sunt rem eveniet architecto
+    </span>
+  </p>
+</div>
+`;
