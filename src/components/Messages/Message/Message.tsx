@@ -1,9 +1,14 @@
 import React from 'react';
 import style from './Message.module.css';
+import {MessagesType} from '../../../redux/messages-reduser';
 
 
-const Message = (props) => {
-  
+type PropsType = {
+  message: MessagesType
+  user: any
+}
+
+const Message: React.FC<PropsType> = (props) => {
     return (
           <div className={style.container}>
             <p><span>{props.user.name}</span> {props.user.username}</p>

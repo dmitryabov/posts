@@ -3,7 +3,7 @@ import prelouder from '../../../assets/images/spinner.svg'
 
 
 
-let Preloader = (props) => {
+let Preloader = () => {
   return <div>
        <img src={prelouder}  alt='prelouder'/>
    </div>

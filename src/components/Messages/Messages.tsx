@@ -2,16 +2,25 @@ import React, {useState, useEffect} from 'react';
 import style from './Messages.module.css';
 import Message from './Message/Message';
 import Preloader from '../common/Preloader/Preloader';
+import {MessagesType} from '../../redux/messages-reduser';
+import {UsersType} from '../../redux/users-reduser';
 
 
-const Messages = (props) => {
+type PropsType = {
+    messages: Array<MessagesType>
+    isFetching: boolean
+    users: Array<UsersType>
+    user: UsersType
+}
+
+const Messages: React.FC<PropsType> = (props) => {
     let [messages, setMessages] = useState(props.messages);
     
     useEffect(() => {
         setMessages(props.messages);
     }, [props.messages]);
 
-    const filterList = (e) => {
+    const filterList = (e: any) => {
         let filteredList = props.messages.filter(function(message){
             return message.title.toLowerCase().search(e.target.value.toLowerCase())!== -1;
         })

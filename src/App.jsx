@@ -3,27 +3,26 @@ import style from './App.module.css';
 import Navbar from './components/Navbar/Navbar';
 import MessagesContainer from './components/Messages/MessagesContainer';
 import Users from './components/Users/Users';
-import { Route} from 'react-router-dom';
+import { Route, Redirect} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {getMessages} from './redux/messages-reduser';
 import {getUsers} from './redux/users-reduser';
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './redux/redux-store';
 
 
-function App(props) {
+
+const App = (props) => {
   return (
-      <body>
+      <div>
         <Navbar />
         <div className={style.content}>
-           <Route path='/messages' render={() => <MessagesContainer 
-                                                     messages={props.messages}
-                                                     users={props.users} 
-                                                     getMessages={props.getMessages}
-                                                     getUsers={props.getUsers}
-                                                     isFetching={props.isFetching}
-                                                     />} />
+           <Redirect from="/" to="/messages" />
+           <Route exact path='/messages' render={() => <MessagesContainer {...props}/>} />
            <Route path='/users' render={() => <Users users={props.users} isFetching={props.isFetching}/>} />
         </div>  
-      </body>
+      </div>
   );
 }
 
@@ -48,4 +47,14 @@ const mapDiapatchToProps = (dispatch) => {
 
 const AppContainer = connect(mapStateToProps, mapDiapatchToProps)(App);
 
-export default AppContainer;
+const MainApp = (props) => {
+ return <BrowserRouter>
+    <React.StrictMode>
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    </React.StrictMode>
+  </BrowserRouter>
+}
+
+export default MainApp;

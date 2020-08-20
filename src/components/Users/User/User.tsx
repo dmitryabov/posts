@@ -1,9 +1,15 @@
 import React from 'react';
 import style from './User.module.css';
 import Preloader from '../../common/Preloader/Preloader';
+import {UsersType} from '../../../redux/users-reduser';
 
 
-const User = (props) => {
+type PropsType = {
+  user: UsersType
+  isFetching?: boolean
+}
+
+const User: React.FC<PropsType>  = (props) => {
     return (
         <>
         {props.isFetching ? <Preloader /> : null}
