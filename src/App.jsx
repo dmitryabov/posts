@@ -3,7 +3,7 @@ import style from './App.module.css';
 import Navbar from './components/Navbar/Navbar';
 import MessagesContainer from './components/Messages/MessagesContainer';
 import Users from './components/Users/Users';
-import { Route, Redirect} from 'react-router-dom';
+import { Route} from 'react-router-dom';
 import { connect } from 'react-redux';
 import {getMessages} from './redux/messages-reduser';
 import {getUsers} from './redux/users-reduser';
@@ -18,8 +18,7 @@ const App = (props) => {
       <div>
         <Navbar />
         <div className={style.content}>
-           <Redirect from="/" to="/messages" />
-           <Route exact path='/messages' render={() => <MessagesContainer {...props}/>} />
+           <Route exact path='/' render={() => <MessagesContainer {...props}/>} />
            <Route path='/users' render={() => <Users users={props.users} isFetching={props.isFetching}/>} />
         </div>  
       </div>

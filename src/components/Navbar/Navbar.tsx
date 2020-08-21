@@ -6,7 +6,7 @@ const Navbar = () => {
     return (
         <div className={style.topnav}>
           <NavLink activeClassName={style.active} to="/users">Users</NavLink>
-          <NavLink activeClassName={style.active} to="/messages">Messeges</NavLink>
+          <NavLink activeClassName={style.active} to="/">Messeges</NavLink>
         </div>
     )
 }
